@@ -26,12 +26,12 @@ public class GUI extends JFrame implements ActionListener {
         JFrame mainWindow = new JFrame("Artist Search");
         JLabel genreLabel = new JLabel("Genre");
         JLabel artistLabel = new JLabel("Artists");
-        JRadioButton genreRadio = new JRadioButton("POP", "EDM", "Country");
+//        JRadioButton genreRadio = new JRadioButton("POP", "EDM", "Country");
         JComboBox artistComboBox = new JComboBox();
         JButton searchButton = new JButton("Search");
     
         mainWindow.add(genreLabel);
-        mainWindow.add(genreRadio);
+//        mainWindow.add(genreRadio);
         mainWindow.add(artistLabel);
         mainWindow.add(artistComboBox);
         mainWindow.add(searchButton);
@@ -41,12 +41,12 @@ public class GUI extends JFrame implements ActionListener {
         mainWindow.setVisible(true);
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        genreRadio.addActionListener(new ActionListener () {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //populate appropriate artists in JComboBox
-            }
-        });
+//        genreRadio.addActionListener(new ActionListener () {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                //populate appropriate artists in JComboBox
+//            }
+//        });
         
         searchButton.addActionListener(new ActionListener () {
             @Override
@@ -57,7 +57,7 @@ public class GUI extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) throws IOException {        
-        new GUI();
+        GUI();
     }
     
     @Override
