@@ -24,11 +24,11 @@ public class GUI extends JFrame implements ActionListener {
     
         //GUI components
         JFrame mainWindow = new JFrame("Artist Search");
-        genreLabel = new JLabel("Genre");
-        artistLabel = new JLabel("Artists");
-        genreRadio = new JRadioButton("POP", "EDM", "Country");
-        artistComboBox = new JComboBox();
-        searchButton = new JButton("Search");
+        JLabel genreLabel = new JLabel("Genre");
+        JLabel artistLabel = new JLabel("Artists");
+        JRadioButton genreRadio = new JRadioButton("POP", "EDM", "Country");
+        JComboBox artistComboBox = new JComboBox();
+        JButton searchButton = new JButton("Search");
     
         mainWindow.add(genreLabel);
         mainWindow.add(genreRadio);
