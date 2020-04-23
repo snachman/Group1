@@ -1,4 +1,4 @@
-package offcall;
+
 
 
 
@@ -28,7 +28,7 @@ import javafx.event.ActionEvent;
 
 
 
-
+// test comment
 
 
 public class Main extends JPanel{
@@ -42,11 +42,11 @@ public class Main extends JPanel{
 	
 
 	
-	static JComboBox artistsBox = new JComboBox();
+	static JComboBox artistsComboBox = new JComboBox();
 
-	static String[] popArtists = { "a", "b", "c"};
-	static String[] edmArtists = { "d", "e", "f"};
-	static String[] countryArtists = { "g", "h", "i"};
+	static String[] popArtists = { "Taylor Swift", "Pitbull", "Justin Bieber"};
+	static String[] edmArtists = { "Skrillex", "Diplo", "Marshmello"};
+	static String[] countryArtists = { "artist1", "artist2", "artist3"};
 	
 	public static void genre_box_shower() {
 		popButton.addActionListener(new ActionListener() {
@@ -54,7 +54,7 @@ public class Main extends JPanel{
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
-				artistsBox.setModel(new DefaultComboBoxModel(popArtists));
+				artistsComboBox.setModel(new DefaultComboBoxModel(popArtists));
 			}
 			
 		});
@@ -63,7 +63,7 @@ public class Main extends JPanel{
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
-				artistsBox.setModel(new DefaultComboBoxModel(edmArtists));
+				artistsComboBox.setModel(new DefaultComboBoxModel(edmArtists));
 			}
 			
 		});
@@ -73,12 +73,24 @@ public class Main extends JPanel{
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
-				artistsBox.setModel(new DefaultComboBoxModel(countryArtists));
+				artistsComboBox.setModel(new DefaultComboBoxModel(countryArtists));
 			}
 			
 		});
 
 	
+		searchButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("SEARCH FOR: " + artistsComboBox.getSelectedItem());
+			}
+			
+		});
+
+	
+
 	
 	
 	}
@@ -88,7 +100,7 @@ public class Main extends JPanel{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame();
-		frame.setSize(600,300);  
+		frame.setSize(600,500);  
 		genre_box_shower();
 		 
 
@@ -102,9 +114,14 @@ public class Main extends JPanel{
 		header.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		header.setBounds(131, 66, 289, 27);
 		header.setVerticalAlignment(SwingConstants.BOTTOM);
-//
-//		
-		//radio buttons
+
+		
+		JLabel header2 = new JLabel("Select a musical artist");
+		header2.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		header2.setBounds(182, 179, 214, 27);
+
+		
+		
 		ButtonGroup buttonGroup = new ButtonGroup();
 		
 		buttonGroup.add(popButton);
@@ -118,27 +135,19 @@ public class Main extends JPanel{
 		countryButton.setBounds(338, 122, 82, 23);
 		
 		
-		//edm_combo
+
 		
 		
-		artistsBox.setBounds(207, 236, 143, 27);
-		artistsBox.setEnabled(true);
-		artistsBox.setVisible(true);
-//
-//
-//		
-//		
-//		
-//		
-//		
-//
+		artistsComboBox.setBounds(207, 236, 143, 27);
+		artistsComboBox.setEnabled(true);
+		artistsComboBox.setVisible(true);
 		
 		
 		searchButton.setBounds(246, 335, 117, 29);
 		searchButton.setEnabled(true); //set back to false
 
 		
-		
+		ui.setBorder(new EmptyBorder(0, 0, 0, 0));
 		
 		frame.setLayout(null);
 		frame.add(title);
@@ -146,7 +155,7 @@ public class Main extends JPanel{
 		frame.add(popButton);
 		frame.add(edmButton);
 		frame.add(countryButton);
-		frame.add(artistsBox);
+		frame.add(artistsComboBox);
 		frame.add(searchButton);
 		
 		frame.add(ui);
