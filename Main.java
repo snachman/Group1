@@ -104,39 +104,56 @@ public class Main extends JFrame  {
 		
 		JButton searchButton = new JButton("Search");
 		searchButton.setBounds(246, 335, 117, 29);
-		searchButton.setEnabled(false);
+		searchButton.setEnabled(true); //set back to false
 		contentPane.add(searchButton);
 		
 
 	}
 	
+	
+	
+	
+	
 class handler implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println(e.getActionCommand() + " selected"); //debug statement
+		System.out.println(e.getActionCommand() + " selected");
 		JComboBox pop_combo;
 		JComboBox electronic_combo;
+//
+//		if (e.getActionCommand() == "Electronic") {
+//			String[] edmArtists = { "Skrillex", "Diplo", "Marshmello"};
+//			electronic_combo = new JComboBox(edmArtists);
+//			electronic_combo.setBounds(207, 236, 143, 27);
+//			electronic_combo.setVisible(true);
+//			electronic_combo.setEnabled(true);
+//			
+//			contentPane.add(electronic_combo);
+//
+//		}		
 
-		if (e.getActionCommand()== "Pop") {
+		if (e.getActionCommand() == "Electronic") {
+			String[] popArtists = { "Skrillex", "Diplo", "Marshmello"};
+			electronic_combo = new JComboBox(popArtists);
+			electronic_combo.setBounds(207, 236, 143, 27);
+			electronic_combo.setEnabled(true);
+			electronic_combo.setVisible(true);
+			contentPane.add(electronic_combo);
+			contentPane.moveToFront(electronic_combo);
+			System.out.println("test");
+		}		
+
+		
+		else if (e.getActionCommand() == "Pop") {
 			String[] popArtists = { "Taylor Swift", "Pitbull", "Justin Bieber"};
 			pop_combo = new JComboBox(popArtists);
 			pop_combo.setBounds(207, 236, 143, 27);
-			pop_combo.setVisible(true);	//invisible until click	
-			//combo.isVisible();
+			pop_combo.setEnabled(true);
+			pop_combo.setVisible(true);
 			contentPane.add(pop_combo);
 			contentPane.moveToFront(pop_combo);
 			System.out.println("test");
-		}		
-		else if (e.getActionCommand()== "Electronic") {
-			String[] edmArtists = { "Skrillex", "Diplo", "Marshmello"};
-			electronic_combo = new JComboBox(edmArtists);
-			electronic_combo.setBounds(207, 236, 143, 27);
-			electronic_combo.setVisible(true);
-			electronic_combo.setEnabled(true);
-			
-			contentPane.add(electronic_combo);
-
 		}		
 //		else if (e.getActionCommand()== "Country") {
 //			System.out.println("test3");
@@ -144,5 +161,5 @@ class handler implements ActionListener{
 	
 	}
 }
-//TODO: 
+//TODO: a
 }
