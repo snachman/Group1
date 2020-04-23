@@ -90,7 +90,7 @@ public class Main extends JPanel{
 		JFrame frame = new JFrame();
 		frame.setSize(600,300);  
 		genre_box_shower();
-		
+		 
 
 		JLabel title = new JLabel("Music Artist Search");
 		title.setBounds(106, 5, 370, 27);
