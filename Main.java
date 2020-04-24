@@ -55,6 +55,7 @@ public class Main extends JPanel{
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
 				artistsComboBox.setModel(new DefaultComboBoxModel(popArtists));
+				searchButton.setVisible(true);
 			}
 			
 		});
@@ -64,6 +65,7 @@ public class Main extends JPanel{
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
 				artistsComboBox.setModel(new DefaultComboBoxModel(edmArtists));
+				searchButton.setVisible(true);
 			}
 			
 		});
@@ -74,17 +76,18 @@ public class Main extends JPanel{
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
 				artistsComboBox.setModel(new DefaultComboBoxModel(countryArtists));
+				searchButton.setVisible(true);
 			}
 			
 		});
 
 	
 		searchButton.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
 				System.out.println("SEARCH FOR: " + artistsComboBox.getSelectedItem());
+				searchButton.setVisible(true);
 			}
 			
 		});
@@ -145,6 +148,7 @@ public class Main extends JPanel{
 		
 		searchButton.setBounds(246, 335, 117, 29);
 		searchButton.setEnabled(true); //set back to false
+		searchButton.setVisible(false);
 
 		
 		ui.setBorder(new EmptyBorder(0, 0, 0, 0));
