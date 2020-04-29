@@ -3,14 +3,22 @@
 
 
 
+import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -86,9 +94,77 @@ public class Main extends JPanel{
 			@Override
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("SEARCH FOR: " + artistsComboBox.getSelectedItem());
+				String chosen_artist = (String) artistsComboBox.getSelectedItem();
+
+				System.out.println("SEARCH FOR: " + chosen_artist);
 				searchButton.setVisible(true);
+
+				
+				
+				
+				
+				
+				
+				
+				
+				JFrame popup = new JFrame();
+				popup.setSize(500,400);
+				
+				//constraint area
+				GridBagLayout grid_bag = new GridBagLayout();
+				popup.setLayout(grid_bag);
+				GridBagConstraints constrain = new GridBagConstraints();
+				constrain.gridx = 0;
+				
+				
+				
+				
+				// artist title label
+				JLabel artist_title = new JLabel(chosen_artist);
+				artist_title.setBounds(106, 5, 370, 27);
+				artist_title.setAlignmentX(Component.CENTER_ALIGNMENT);
+				artist_title.setFont(new Font("Lucida Grande", Font.BOLD, 34));
+
+				
+				// artist image area
+				JLabel artist_image = new JLabel("image goes here");
+				JLabel insta = new JLabel(get_insta());
+				JLabel facebook = new JLabel(get_facebook());
+				JLabel snapchat= new JLabel(get_snapchat());
+				
+				
+				
+//				ImageIcon imageIcon = new ImageIcon("/image.jpg");
+//			    JLabel label = new JLabel(imageIcon);
+
+				
+				
+				
+				// add items to popup
+				popup.add(artist_title, constrain);
+			    popup.add(artist_image, constrain);
+			    popup.add(insta, constrain);
+			    popup.add(facebook, constrain);
+			    popup.add(snapchat, constrain);			    
+			    popup.setVisible(true);
+				
 			}
+			
+			// query section
+			public String get_insta() {
+				return "instagram here";
+			}
+
+			
+			public String get_facebook() {
+				return "facebook here";
+			}
+			
+			
+			public String get_snapchat() {
+				return "snapchat here";
+			}
+
 			
 		});
 
