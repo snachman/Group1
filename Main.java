@@ -2,8 +2,6 @@
 
 
 
-
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -104,7 +102,6 @@ public class Main extends JPanel{
 				searchButton.setVisible(true);
 
 				
-				JLabel picLabel;
 				try {
 					
 					JFrame popup = new JFrame();
@@ -125,7 +122,7 @@ public class Main extends JPanel{
 					
 					
 					
-					picLabel = new JLabel(new ImageIcon(get_image()));
+					JLabel picLabel = new JLabel(new ImageIcon(get_image(chosen_artist)));
 				    popup.add(picLabel, constrain); // artist image
 					JLabel insta = new JLabel(get_insta());
 					JLabel facebook = new JLabel(get_facebook());
@@ -147,10 +144,6 @@ public class Main extends JPanel{
 					e1.printStackTrace();
 					
 				}
-				
-				
-
-				
 			}
 			
 			
@@ -161,7 +154,6 @@ public class Main extends JPanel{
 
 			
 			public String get_facebook() {
-				System.out.println("test facebook");
 				return "facebook here";
 			}
 			
@@ -171,13 +163,48 @@ public class Main extends JPanel{
 			} 
 
 			
-			public URL get_image() throws MalformedURLException {
-				String path = "https://img.icons8.com/material/4ac144/256/user-male.png";
-				URL url = new URL(path);
-				return url;
-
+			public String get_artist_url(String artist) {
+				String path;
+				switch (artist) {
+					case "Blake Shelton":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/BlakeShelton.png";
+						break;
+					case "Diplo":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Diplo.png";
+						break;
+					case "Dolly Parton":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/DollyParton.png";
+						break;
+					case "Justin Beiber":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/JustinBieber.png";
+						break;
+					case "Keith Urban":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/KeithUrban.png";
+						break;
+					case "Marshmello":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Marshmello.png";
+						break;
+					case "Pitbull":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Pitbull.png";
+						break;
+					case "Skrillex":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Skrillex.png";
+						break;
+					case "Taylor Swift":
+						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/TaylorSwift.png";
+						break;
+					default:
+						path = "";
+						break;
+				}
+				
+				return path;
 			}
 
+			public URL get_image(String artist) throws MalformedURLException {
+				URL url = new URL(get_artist_url(artist));
+				return url;
+				}
 
 			
 			
