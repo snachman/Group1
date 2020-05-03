@@ -1,5 +1,6 @@
 
 
+import javax.swing.*;
 
 
 
@@ -13,11 +14,14 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -100,55 +104,55 @@ public class Main extends JPanel{
 				searchButton.setVisible(true);
 
 				
-				
-				
-				
-				
-				
-				
-				
-				JFrame popup = new JFrame();
-				popup.setSize(500,400);
-				
-				//constraint area
-				GridBagLayout grid_bag = new GridBagLayout();
-				popup.setLayout(grid_bag);
-				GridBagConstraints constrain = new GridBagConstraints();
-				constrain.gridx = 0;
-				
-				
-				
-				
-				// artist title label
-				JLabel artist_title = new JLabel(chosen_artist);
-				artist_title.setBounds(106, 5, 370, 27);
-				artist_title.setAlignmentX(Component.CENTER_ALIGNMENT);
-				artist_title.setFont(new Font("Lucida Grande", Font.BOLD, 34));
+				JLabel picLabel;
+				try {
+					
+					JFrame popup = new JFrame();
+					popup.setSize(500,400);
+					
+					//constraint area
+					GridBagLayout grid_bag = new GridBagLayout();
+					popup.setLayout(grid_bag);
+					GridBagConstraints constrain = new GridBagConstraints();
+					constrain.gridx = 0;
+					
+					// artist title label
+					JLabel artist_title = new JLabel(chosen_artist);
+					artist_title.setBounds(106, 5, 370, 27);
+					artist_title.setAlignmentX(Component.CENTER_ALIGNMENT);
+					artist_title.setFont(new Font("Lucida Grande", Font.BOLD, 34));
 
-				
-				// artist image area
-				JLabel artist_image = new JLabel("image goes here");
-				JLabel insta = new JLabel(get_insta());
-				JLabel facebook = new JLabel(get_facebook());
-				JLabel snapchat= new JLabel(get_snapchat());
-				
-				
-				
-//				ImageIcon imageIcon = new ImageIcon("/image.jpg");
-//			    JLabel label = new JLabel(imageIcon);
+					
+					
+					
+					picLabel = new JLabel(new ImageIcon(get_image()));
+				    popup.add(picLabel, constrain); // artist image
+					JLabel insta = new JLabel(get_insta());
+					JLabel facebook = new JLabel(get_facebook());
+					JLabel snapchat= new JLabel(get_snapchat());
 
+					
+					// add items to popup
+					popup.add(artist_title, constrain);
+				    popup.add(insta, constrain);
+				    popup.add(facebook, constrain);
+				    popup.add(snapchat, constrain);
+				    popup.setVisible(true);
+				    popup.toFront();
+
+
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					// catch bad image url
+					e1.printStackTrace();
+					
+				}
 				
 				
-				
-				// add items to popup
-				popup.add(artist_title, constrain);
-			    popup.add(artist_image, constrain);
-			    popup.add(insta, constrain);
-			    popup.add(facebook, constrain);
-			    popup.add(snapchat, constrain);			    
-			    popup.setVisible(true);
+
 				
 			}
+			
 			
 			// query section
 			public String get_insta() {
@@ -157,14 +161,26 @@ public class Main extends JPanel{
 
 			
 			public String get_facebook() {
+				System.out.println("test facebook");
 				return "facebook here";
 			}
 			
 			
 			public String get_snapchat() {
-				return "snapchat here";
+				return "snapchat here"; 
+			} 
+
+			
+			public URL get_image() throws MalformedURLException {
+				String path = "https://img.icons8.com/material/4ac144/256/user-male.png";
+				URL url = new URL(path);
+				return url;
+
 			}
 
+
+			
+			
 			
 		});
 
