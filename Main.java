@@ -4,16 +4,24 @@
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
@@ -28,6 +36,8 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
@@ -36,7 +46,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 
-
+import java.sql.*;
 
 // test comment
 
@@ -56,7 +66,12 @@ public class Main extends JPanel{
 
 	static String[] popArtists = { "Taylor Swift", "Pitbull", "Justin Bieber"};
 	static String[] edmArtists = { "Skrillex", "Diplo", "Marshmello"};
-	static String[] countryArtists = { "artist1", "artist2", "artist3"};
+	static String[] countryArtists = { "Keith Urban", "Blake Shelton", "Carrie Underwood"};
+	
+	
+
+	
+	
 	
 	public static void genre_box_shower() {
 		popButton.addActionListener(new ActionListener() {
@@ -88,7 +103,6 @@ public class Main extends JPanel{
 				artistsComboBox.setModel(new DefaultComboBoxModel(countryArtists));
 				searchButton.setVisible(true);
 			}
-			
 		});
 
 	
@@ -100,112 +114,133 @@ public class Main extends JPanel{
 
 				System.out.println("SEARCH FOR: " + chosen_artist);
 				searchButton.setVisible(true);
+				
+				JFrame popup = new JFrame();
+				popup.setSize(1000,400);
+				
+				//constraint area
+				GridBagLayout grid_bag = new GridBagLayout();
+				popup.setLayout(grid_bag);
+				GridBagConstraints constrain = new GridBagConstraints();
+				constrain.gridx = 0;
+				
+				// artist title label
+				JLabel artist_title = new JLabel(chosen_artist);
+				artist_title.setBounds(106, 5, 370, 27);
+				artist_title.setAlignmentX(Component.CENTER_ALIGNMENT);
+				artist_title.setFont(new Font("Lucida Grande", Font.BOLD, 34));
+
 
 				
-				try {
-					
-					JFrame popup = new JFrame();
-					popup.setSize(500,400);
-					
-					//constraint area
-					GridBagLayout grid_bag = new GridBagLayout();
-					popup.setLayout(grid_bag);
-					GridBagConstraints constrain = new GridBagConstraints();
-					constrain.gridx = 0;
-					
-					// artist title label
-					JLabel artist_title = new JLabel(chosen_artist);
-					artist_title.setBounds(106, 5, 370, 27);
-					artist_title.setAlignmentX(Component.CENTER_ALIGNMENT);
-					artist_title.setFont(new Font("Lucida Grande", Font.BOLD, 34));
-
-					
-					
-					
-					JLabel picLabel = new JLabel(new ImageIcon(get_image(chosen_artist)));
-				    popup.add(picLabel, constrain); // artist image
-					JLabel insta = new JLabel(get_insta());
-					JLabel facebook = new JLabel(get_facebook());
-					JLabel snapchat= new JLabel(get_snapchat());
-
-					
-					// add items to popup
-					popup.add(artist_title, constrain);
-				    popup.add(insta, constrain);
-				    popup.add(facebook, constrain);
-				    popup.add(snapchat, constrain);
-				    popup.setVisible(true);
-				    popup.toFront();
+				
+				
+				
+				
+				
+				
+				String dats = get_artist_data(chosen_artist);
+				JTextArea dataLabel = new JTextArea(dats);
+				dataLabel.setWrapStyleWord(true);
+				dataLabel.setEditable(false);
+				dataLabel.setWrapStyleWord(true);
+				
+				
+				// add items to popup
+				popup.add(artist_title, constrain);
+				popup.add(dataLabel, constrain);
+			    popup.setVisible(true);
+			    popup.toFront();
 
 
-				} catch (MalformedURLException e1) {
-					// TODO Auto-generated catch block
-					// catch bad image url
-					e1.printStackTrace();
-					
-				}
 			}
 			
 			
 			// query section
-			public String get_insta() {
-				return "instagram here";
+			
+			
+
+			public String format_records(String[][] raw) {
+				return raw[0][0];
 			}
 
-			
-			public String get_facebook() {
-				return "facebook here";
-			}
-			
-			
-			public String get_snapchat() {
-				return "snapchat here"; 
-			} 
 
-			
-			public String get_artist_url(String artist) {
-				String path;
+			public String get_artist_data(String artist) {
+				String formatted = "a";
 				switch (artist) {
-					case "Blake Shelton":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/BlakeShelton.png";
-						break;
-					case "Diplo":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Diplo.png";
-						break;
-					case "Dolly Parton":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/DollyParton.png";
-						break;
-					case "Justin Beiber":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/JustinBieber.png";
-						break;
-					case "Keith Urban":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/KeithUrban.png";
-						break;
-					case "Marshmello":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Marshmello.png";
-						break;
-					case "Pitbull":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Pitbull.png";
-						break;
-					case "Skrillex":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Skrillex.png";
-						break;
-					case "Taylor Swift":
-						path = "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/TaylorSwift.png";
-						break;
-					default:
-						path = "";
-						break;
+				case "Taylor Swift":
+					Artist_Taylor o = new Artist_Taylor();
+					String bio = o.get_bio();
+					String stats = o.get_stats();
+					String [][] records = o.get_records();
+					formatted =  bio + "\n" + stats;
+					break;
+				case "Pitbull":
+					Artist_Pitbull p = new Artist_Pitbull();
+					String pitbull_bio = p.get_bio();
+					String pitbull_stats = p.get_stats();
+					String [][] pitbull_records = p.get_records();
+					formatted =  pitbull_bio + "\n" + pitbull_stats;
+					break;
+
+				case "Justin Bieber":
+					Artist_JB bieber = new Artist_JB();
+					String bieber_bio = bieber.get_bio();
+					String bieber_stats = bieber.get_stats();
+					String [][] bieber_records = bieber.get_records();
+					formatted =  bieber_bio + "\n" + bieber_stats;
+					break;
+
+				case "Skrillex":
+					Artist_Skrillex s = new Artist_Skrillex();
+					String s_bio = s.get_bio();
+					String s_stats = s.get_stats();
+					String [][] s_records = s.get_records();
+					formatted =  s_bio + "\n" + s_stats;
+					break;
+
+				case "Diplo":
+					Artist_Diplo d = new Artist_Diplo();
+					String d_bio = d.get_bio();
+					String d_stats = d.get_stats();
+					String [][] d_records = d.get_records();
+					formatted =  d_bio + "\n" + d_stats;
+					break;
+
+				case "Marshmello":
+					Artist_Marshmello m = new Artist_Marshmello();
+					String m_bio = m.get_bio();
+					String m_stats = m.get_stats();
+					String [][] m_records = m.get_records();
+					formatted =  m_bio + "\n" + m_stats;
+					break;
+
+				case "Keith Urban":
+					Artist_Keith k = new Artist_Keith();
+					String k_bio = k.get_bio();
+					String k_stats = k.get_stats();
+					String [][] k_records = k.get_records();
+					formatted =  k_bio + "\n" + k_stats;
+					break;
+
+				case "Blake Shelton":
+					Artist_Blake blake = new Artist_Blake();
+					String blake_bio = blake.get_bio();
+					String blake_stats = blake.get_stats();
+					String [][] blake_records = blake.get_records();
+					formatted =  blake_bio + "\n" + blake_stats;
+					break;
+				case "Carrie Underwood":
+					Artist_Carrie c = new Artist_Carrie();
+					String c_bio = c.get_bio();
+					String c_stats = c.get_stats();
+					String [][] c_records = c.get_records();
+					formatted = c_bio + "\n" + c_stats;
+					break;
+
 				}
 				
-				return path;
+				return formatted;
 			}
-
-			public URL get_image(String artist) throws MalformedURLException {
-				URL url = new URL(get_artist_url(artist));
-				return url;
-				}
-
 			
 			
 			
@@ -219,13 +254,19 @@ public class Main extends JPanel{
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame();
 		frame.setSize(600,500);  
 		genre_box_shower();
-		 
+		
+		
+		
 
+		
+		
+		
+		
 		JLabel title = new JLabel("Music Artist Search");
 		title.setBounds(106, 5, 370, 27);
 		title.setAlignmentX(Component.CENTER_ALIGNMENT);
