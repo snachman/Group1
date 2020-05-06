@@ -31,8 +31,15 @@ public class Artist {
 	}
 	
 	
-	public String[][] get_records() {
-		return records;
+	public String get_records() {
+		
+		String response = "";
+		for(int i = 0; i<records.length; i++) {
+			for(int x = 0; x<records[i].length; x++)
+			response += records[i][x] + "\t";
+			response += "\n";
+		}
+		return response;
 	}
 	
 	

@@ -159,9 +159,6 @@ public class Main extends JPanel{
 			
 			
 
-			public String format_records(String[][] raw) {
-				return raw[0][0];
-			}
 
 
 			public String get_artist_data(String artist) {
@@ -169,8 +166,8 @@ public class Main extends JPanel{
 				switch (artist) {
 				case "Taylor Swift":
 					String [][] taylor_records = {{ "Title", "Release Date", "# Tracks" },{ "Lover", "August 23, 2019", "18" },{ "Reputation", "November 10, 2017", "15" },{ "1989", "October 27, 2014", "13" },{ "Red", "October 22, 2012", "16" },{ "Speak Now", "October 25, 2010", "14" },{ "Fearless", "October 27, 2009", "13" },{ "Taylor Swift", "October 24, 2016", "11" }};
-					Artist tswift = new Artist("Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. She is known for narrative songs about her personal life, which \nhave received widespread media coverage. At age 14, Swift became the \nyoungest artist signed by the Sony/ATV Music publishing house and, at age 15, she signed her first record deal. ", "Full Name: Taylor Alison Swift\nDate of Birth: December 13, 1989\nPlace of Birth: West Reading, Pennsylvania\nYears Active: 2006 - Present\n\nInstagram: @TaylorSwift\nTwitter: @TaylorSwift13", taylor_records, "");
-					formatted =  tswift.get_bio() + "\n" + tswift.get_stats();
+					Artist tswift = new Artist("Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. She is known for narrative songs about her personal\nlife, which have received widespread media coverage. At age 14, Swift became the \nyoungest artist signed by the Sony/ATV Music publishing house and, at age 15, she signed her first record deal. ", "Full Name: Taylor Alison Swift\nDate of Birth: December 13, 1989\nPlace of Birth: West Reading, Pennsylvania\nYears Active: 2006 - Present\n\nInstagram: @TaylorSwift\nTwitter: @TaylorSwift13", taylor_records, "");
+					formatted =  tswift.get_bio() + "\n" + tswift.get_stats() + tswift.get_records() + "\n" ;
 					break;
 				case "Pitbull":
 					String[][] pitbull_records = {{ "Title", "Release Date", "# Tracks" },{ "Libertad 548", "September 27, 2019", "15" }, { "Climate Change", "March 17, 2017", "12" },{ "Dale", "July 17, 2015", "12" },{ "Globalization", "November 24, 2014", "11" },{ "Global Warming", "November 19, 2012", "12" },{ "Planet Pit", "June 21, 2011", "16" },{ "Armando", "November 2, 2010", "12" },};
