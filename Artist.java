@@ -36,9 +36,7 @@ public class Artist {
 	}
 	
 	
-	public String get_image_link() {
-//		return "<html><body><a href=\"" + image + "\">Click here to see what the artist looks like</a></body></html>";
-		
+	public String get_image_link() {		
 		return "Use the link below to see a picture of the artist:\n" + image;
 
 		

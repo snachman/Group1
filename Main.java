@@ -100,7 +100,8 @@ public class Main extends JPanel{
 			}
 		});
 
-	
+
+		
 		searchButton.addActionListener(new ActionListener() {
 			@Override
 			// adds listener for search button
@@ -127,10 +128,6 @@ public class Main extends JPanel{
 				artist_title.setAlignmentX(Component.CENTER_ALIGNMENT);
 				artist_title.setFont(new Font("Lucida Grande", Font.BOLD, 34));
 				
-				//image area
-				JLabel picture = new JLabel("");
-				picture.setIcon(new ImageIcon(new ImageIcon(Images.get_url(chosen_artist), chosen_artist).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT)));
-				
 				
 				// create text box and fill it with data from the method get_artist_data()
 				String dats = get_artist_data(chosen_artist); // passes the chosen_artist to the method that returns formatted string
@@ -142,10 +139,11 @@ public class Main extends JPanel{
 				
 				// add items to popup
 				popup.add(artist_title, constrain);
-				popup.add(picture, constrain);
 				popup.add(dataLabel, constrain);
-			    popup.setVisible(true);
+			    popup.pack();
+				popup.setVisible(true);
 			    popup.toFront();
+			    
 			}
 			
 			// Method to create artist object and 
@@ -164,12 +162,12 @@ public class Main extends JPanel{
 					break;
 				case "Justin Bieber":
 					String[][] bieber_records = {{ "Title", "Release Date", "# Tracks" },{ "Changes", "February 14, 2020", "16" }, { "Purpose", "November 13, 2015", "13" },{ "Believe", "June 15, 2013", "13" },{ "Under the Mistletoe", "November 1, 2011", "11" },{ "My World 2.0", "March 19, 2010", "10" }};
-					Artist bieber = new Artist("Justin Drew Bieber (born March 1, 1994) is a Canadian singer, songwriter and actor. Discovered at 13 years old by talent manager Scooter Braun after he had watched his YouTube cover song videos, Bieber was signed to RBMG Records in 2008. With Bieber's debut EP My World, released in late 2009, Bieber became the first artist to have seven songs from a debut record chart on the Billboard Hot 100.", "Full Name: Justin Drew Bieber\nDate of Birth: March 1, 1994\nPlace of Birth: Ontario, Canada\nYears Active: 2007 - Present\n\nInstagram: @JustinBieber\nTwitter: @JustinBieber", bieber_records, "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/JustinBieber.png");
+					Artist bieber = new Artist("Justin Drew Bieber (born March 1, 1994) is a Canadian singer, songwriter and actor. Discovered at 13 years old \nby talent manager Scooter Braun after he had watched his YouTube cover song videos, Bieber was signed to RBMG Records in 2008. \nWith Bieber's debut EP My World, released in late 2009, Bieber became \nthe first artist to have seven songs from a debut record chart on the Billboard Hot 100.", "Full Name: Justin Drew Bieber\nDate of Birth: March 1, 1994\nPlace of Birth: Ontario, Canada\nYears Active: 2007 - Present\n\nInstagram: @JustinBieber\nTwitter: @JustinBieber", bieber_records, "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/JustinBieber.png");
 					formatted =  bieber.get_bio() + "\n" + bieber.get_stats() + bieber.get_records() + "\n" + bieber.get_image_link();
 					break;
 				case "Skrillex":
 					String[][] skrillex_records = {{ "Recess", "March 17, 2014", "11" }};
-					Artist skrillex = new Artist("Sonny John Moore (born January 15, 1988), known professionally as Skrillex, is an American record producer, DJ, musician, singer and songwriter. Growing up in Northeast Los Angeles and in Northern California, he joined the American post-hardcore band From First to Last as the lead singer in 2004, and recorded two studio albums with the band (Dear Diary, My Teen Angst Has a Body Count, 2004, and Heroine, 2006) before leaving to pursue a solo career in 2007.", "Full Name: Sonny John Moore\nDate of Birth: January 15, 1988\nPlace of Birth: Los Angeles, California\nYears Active: 2004 - Present\n\nInstagram: @Skrillex\nTwitter: @Skrillex", skrillex_records, "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Skrillex.png");
+					Artist skrillex = new Artist("Sonny John Moore (born January 15, 1988), known professionally as Skrillex, is an American record producer, DJ, \nmusician, singer and songwriter. Growing up in Northeast Los Angeles and in Northern \nCalifornia, he joined the American post-hardcore band From First to Last as the lead singer in 2004, \nand recorded two studio albums with the band (Dear Diary, My Teen Angst Has a Body Count, 2004, and Heroine, 2006) before leaving to pursue a solo career in 2007.", "Full Name: Sonny John Moore\nDate of Birth: January 15, 1988\nPlace of Birth: Los Angeles, California\nYears Active: 2004 - Present\n\nInstagram: @Skrillex\nTwitter: @Skrillex", skrillex_records, "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Skrillex.png");
 					formatted =  skrillex.get_bio() + "\n" + skrillex.get_stats() + skrillex.get_records() + "\n" + skrillex.get_image_link();
 					break;
 				case "Diplo":
