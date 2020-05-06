@@ -168,73 +168,57 @@ public class Main extends JPanel{
 				String formatted = "a";
 				switch (artist) {
 				case "Taylor Swift":
-					Artist_Taylor o = new Artist_Taylor();
-					String bio = o.get_bio();
-					String stats = o.get_stats();
-					String [][] records = o.get_records();
-					formatted =  bio + "\n" + stats;
+					String [][] taylor_records = {{ "Title", "Release Date", "# Tracks" },{ "Lover", "August 23, 2019", "18" },{ "Reputation", "November 10, 2017", "15" },{ "1989", "October 27, 2014", "13" },{ "Red", "October 22, 2012", "16" },{ "Speak Now", "October 25, 2010", "14" },{ "Fearless", "October 27, 2009", "13" },{ "Taylor Swift", "October 24, 2016", "11" }};
+					Artist tswift = new Artist("Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. She is known for narrative songs about her personal life, which \nhave received widespread media coverage. At age 14, Swift became the \nyoungest artist signed by the Sony/ATV Music publishing house and, at age 15, she signed her first record deal. ", "Full Name: Taylor Alison Swift\nDate of Birth: December 13, 1989\nPlace of Birth: West Reading, Pennsylvania\nYears Active: 2006 - Present\n\nInstagram: @TaylorSwift\nTwitter: @TaylorSwift13", taylor_records, "");
+					formatted =  tswift.get_bio() + "\n" + tswift.get_stats();
 					break;
 				case "Pitbull":
-					Artist_Pitbull p = new Artist_Pitbull();
-					String pitbull_bio = p.get_bio();
-					String pitbull_stats = p.get_stats();
-					String [][] pitbull_records = p.get_records();
-					formatted =  pitbull_bio + "\n" + pitbull_stats;
+					String[][] pitbull_records = {{ "Title", "Release Date", "# Tracks" },{ "Libertad 548", "September 27, 2019", "15" }, { "Climate Change", "March 17, 2017", "12" },{ "Dale", "July 17, 2015", "12" },{ "Globalization", "November 24, 2014", "11" },{ "Global Warming", "November 19, 2012", "12" },{ "Planet Pit", "June 21, 2011", "16" },{ "Armando", "November 2, 2010", "12" },};
+					Artist pitbull = new Artist("Armando Christian Pérez (born January 15, 1981), known by his stage name Pitbull, is an American rapper, singer, songwriter and record producer. Pérez began his career in the early 2000s, recording reggaeton, latin hip hop and crunk music under a multitude of labels. In 2004, he released his debut album M.I.A.M.I. under TVT Records and the executive production of Lil Jon ", "Full Name: Armando Christian Pérez\nDate of Birth: January 15, 1981\nPlace of Birth: Miami, Florida\nYears Active: 2001 - Present\n\nInstagram: @Pitbull\nTwitter: @Pitbull", pitbull_records, "");
+					formatted =  pitbull.get_bio() + "\n" + pitbull.get_stats();
 					break;
 
 				case "Justin Bieber":
-					Artist_JB bieber = new Artist_JB();
-					String bieber_bio = bieber.get_bio();
-					String bieber_stats = bieber.get_stats();
-					String [][] bieber_records = bieber.get_records();
-					formatted =  bieber_bio + "\n" + bieber_stats;
+					String[][] bieber_records = {{ "Title", "Release Date", "# Tracks" },{ "Changes", "February 14, 2020", "16" }, { "Purpose", "November 13, 2015", "13" },{ "Believe", "June 15, 2013", "13" },{ "Under the Mistletoe", "November 1, 2011", "11" },{ "My World 2.0", "March 19, 2010", "10" }};
+					Artist bieber = new Artist("Justin Drew Bieber (born March 1, 1994) is a Canadian singer, songwriter and actor. Discovered at 13 years old by talent manager Scooter Braun after he had watched his YouTube cover song videos, Bieber was signed to RBMG Records in 2008. With Bieber's debut EP My World, released in late 2009, Bieber became the first artist to have seven songs from a debut record chart on the Billboard Hot 100.", "Full Name: Justin Drew Bieber\nDate of Birth: March 1, 1994\nPlace of Birth: Ontario, Canada\nYears Active: 2007 - Present\n\nInstagram: @JustinBieber\nTwitter: @JustinBieber", bieber_records, "");
+					formatted =  bieber.get_bio() + "\n" + bieber.get_stats();
 					break;
 
 				case "Skrillex":
-					Artist_Skrillex s = new Artist_Skrillex();
-					String s_bio = s.get_bio();
-					String s_stats = s.get_stats();
-					String [][] s_records = s.get_records();
-					formatted =  s_bio + "\n" + s_stats;
+					String[][] skrillex_records = {{ "Recess", "March 17, 2014", "11" }};
+					Artist skrillex = new Artist("Sonny John Moore (born January 15, 1988), known professionally as Skrillex, is an American record producer, DJ, musician, singer and songwriter. Growing up in Northeast Los Angeles and in Northern California, he joined the American post-hardcore band From First to Last as the lead singer in 2004, and recorded two studio albums with the band (Dear Diary, My Teen Angst Has a Body Count, 2004, and Heroine, 2006) before leaving to pursue a solo career in 2007.", "Full Name: Sonny John Moore\nDate of Birth: January 15, 1988\nPlace of Birth: Los Angeles, California\nYears Active: 2004 - Present\n\nInstagram: @Skrillex\nTwitter: @Skrillex", skrillex_records, "");
+					formatted =  skrillex.get_bio() + "\n" + skrillex.get_stats();
 					break;
 
 				case "Diplo":
-					Artist_Diplo d = new Artist_Diplo();
-					String d_bio = d.get_bio();
-					String d_stats = d.get_stats();
-					String [][] d_records = d.get_records();
-					formatted =  d_bio + "\n" + d_stats;
+					String[][] diplo_records = {{ "Title", "Release Date", "# Tracks" }, { "Florida", "September 21, 2004", "11" }, { "Diplo Presents Thomas Wesley Chaper 1: Snake Oil", "May 29, 2020","TBD"}};
+					Artist diplo = new Artist("Thomas Wesley Pentz (born November 10, 1978), known professionally as Diplo, is an American DJ, songwriter, and record producer based in Los Angeles, California. He is the co-creator and lead member of the electronic dancehall music project Major Lazer, a member of the supergroup LSD with Sia and Labrinth, a member of electronic duo Jack Ü with producer and DJ Skrillex, and a member of Silk City with Mark Ronson.", "Full Name: Thomas Wesley Pentz\nDate of Birth: November 10, 1978\nPlace of Birth: Tupelo, Mississippi\nYears Active: 1997 - Present\n\nInstagram: @Diplo\nTwitter: @Diplo",diplo_records, "");
+					formatted =  diplo.get_bio()+ "\n" + diplo.get_stats();
 					break;
 
 				case "Marshmello":
-					Artist_Marshmello m = new Artist_Marshmello();
-					String m_bio = m.get_bio();
-					String m_stats = m.get_stats();
-					String [][] m_records = m.get_records();
-					formatted =  m_bio + "\n" + m_stats;
+					String[][] marshmello_records = {{ "Title", "Release Date", "# Tracks" },{ "Joytime III", "July 2, 2019", "13" },{ "Joytime II", "June 22, 2018", "9" },{ "Joytime", "January 8, 2016", "10" }};
+					Artist marshmello = new Artist("Christopher Comstock (born May 19, 1992), known professionally as Marshmello, is an American electronic music producer and DJ. He first gained international recognition by releasing remixes of songs by American DJ duo Jack Ü and Russian-German DJ Zedd.", "Full Name: Christopher Comstock\nDate of Birth: May 19, 1992\nPlace of Birth: Philadelphia, Pennsylvania\nYears Active: 2015 - Present\n\nInstagram: @MarshmelloMusic\nTwitter: @MarshmelloMusic", marshmello_records, "");
+					formatted =  marshmello.get_bio() + "\n" + marshmello.get_stats();
 					break;
 
 				case "Keith Urban":
-					Artist_Keith k = new Artist_Keith();
-					String k_bio = k.get_bio();
-					String k_stats = k.get_stats();
-					String [][] k_records = k.get_records();
-					formatted =  k_bio + "\n" + k_stats;
+					
+					String[][] urban_records = {{ "Title", "Release Date", "# Tracks" },{ "Graffiti U", "April 27, 2018", "15" },{ "Ripcord", "May 6, 2016", "13" },{ "Fuse", "September 10, 2013", "11" },{ "Get Closer", "November 16, 2010", "8" },{ "Defying Gravity", "March 31, 2009", "11" },{ "Love, Pain & the Whole Crazy Thing", "November 7, 2006", "13" },{ "Be Here", "September 21, 2004", "13" },{ "Golden Road", "October 8, 2002", "13" },{ "Keith Urban II", "October 19, 1999", "12" },{ "Keith Urban", "September 23, 1991", "15" }};
+					Artist urban = new Artist("Keith Lionel Urban (born 26 October 1967) is a New Zealand-Australian singer, songwriter and record producer well known for his work in country music. In 1991, he released a self-titled debut album and charted four singles in Australia before moving to the United States the following year. ", "Full Name: Keith Lionel Urban\nDate of Birth: October 26, 1967\nPlace of Birth: Whangarei, Northland, New Zealand\nYears Active: 1990 - Present\n\nInstagram: @KeithUrban\nTwitter: @KeithUrban", urban_records, "");
+					formatted =  urban.get_bio()+ "\n" + urban.get_stats();
 					break;
 
 				case "Blake Shelton":
-					Artist_Blake blake = new Artist_Blake();
-					String blake_bio = blake.get_bio();
-					String blake_stats = blake.get_stats();
-					String [][] blake_records = blake.get_records();
-					formatted =  blake_bio + "\n" + blake_stats;
+					String[][] shelton_records = {{ "Title", "Release Date", "# Tracks" },{ "Graffiti U", "April 27, 2018", "15" },{ "Ripcord", "May 6, 2016", "13" },{ "Fuse", "September 10, 2013", "11" },{ "Get Closer", "November 16, 2010", "8" },{ "Defying Gravity", "March 31, 2009", "11" },{ "Love, Pain & the Whole Crazy Thing", "November 7, 2006", "13" },{ "Be Here", "September 21, 2004", "13" },{ "Golden Road", "October 8, 2002", "13" },{ "Keith Urban II", "October 19, 1999", "12" },{ "Keith Urban", "September 23, 1991", "15" }};					
+					Artist shelton = new Artist("Blake Tollison Shelton (born June 18, 1976) is an American country music singer and television personality. In 2001, he made his debut with the single \"Austin\". The lead-off single from his self-titled debut album, \"Austin\" spent five weeks at number one on the Billboard Hot Country Songs chart. The now Platinum-certified debut album also produced two more top 20 entries (\"All Over Me\" and \"Ol' Red\").", "Full Name: Blake Tollison Shelton\nDate of Birth: June 18, 1976\nPlace of Birth: Ada, Oklahoma\nYears Active: 2001 - Present\n\nInstagram: @BlakeShelton\nTwitter: @BlakeShelton", shelton_records, "");
+					formatted =  shelton.get_bio() + "\n" + shelton.get_stats();
 					break;
+					
 				case "Carrie Underwood":
-					Artist_Carrie c = new Artist_Carrie();
-					String c_bio = c.get_bio();
-					String c_stats = c.get_stats();
-					String [][] c_records = c.get_records();
-					formatted = c_bio + "\n" + c_stats;
+					String[][] underwood_records = {{ "Title", "Release Date", "# Tracks" },{ "Cry Pretty", "September 14, 2018", "13" },{ "Stroyteller", "October 23, 2015", "13" },{ "Blown Away", "May 1, 2012", "14" },{ "Play On", "November 3, 2009", "13" },{ "Carnival Ride", "October 23, 2007", "13" },{ "Some Hearts", "November 15, 2005", "13" }}; 
+					Artist underwood = new Artist("Carrie Marie Underwood (born March 10, 1983) is an American singer, songwriter, record producer, fashion designer, author and actress. She rose to fame as the winner of the fourth season of American Idol in 2005. Her debut single, \"Inside Your Heaven\", made her the only country artist to debut at number one on the Billboard Hot 100 chart and the only solo country artist in the 2000s to have a number-one song on the Hot 100. ", "Full Name: Carrie Marie Underwood\nDate of Birth: March 10, 1983\nPlace of Birth: Muskogee, Oklahoma\nYears Active: 2004 - Present\n\nInstagram: @carrieunderwood\nTwitter: @carrieunderwood", underwood_records, "");
+					formatted = underwood.get_bio() + "\n" + underwood.get_stats();
 					break;
 
 				}
