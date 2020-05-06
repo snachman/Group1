@@ -1,7 +1,3 @@
-
-
-
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -48,7 +44,6 @@ import javafx.event.ActionEvent;
 
 import java.sql.*;
 
-// test comment
 
 
 public class Main extends JPanel{
@@ -116,7 +111,7 @@ public class Main extends JPanel{
 
 				
 				JFrame popup = new JFrame(); 	// creates the individual artist popup box
-				popup.setSize(1000,400); 		// set size of pop up box
+				popup.setSize(1000,600); 		// set size of pop up box
 				
 				
 				//constraint area
@@ -132,6 +127,10 @@ public class Main extends JPanel{
 				artist_title.setAlignmentX(Component.CENTER_ALIGNMENT);
 				artist_title.setFont(new Font("Lucida Grande", Font.BOLD, 34));
 				
+				//image area
+				JLabel picture = new JLabel("");
+				picture.setIcon(new ImageIcon(new ImageIcon(Images.get_url(chosen_artist), chosen_artist).getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT)));
+				
 				
 				// create text box and fill it with data from the method get_artist_data()
 				String dats = get_artist_data(chosen_artist); // passes the chosen_artist to the method that returns formatted string
@@ -143,11 +142,10 @@ public class Main extends JPanel{
 				
 				// add items to popup
 				popup.add(artist_title, constrain);
+				popup.add(picture, constrain);
 				popup.add(dataLabel, constrain);
 			    popup.setVisible(true);
 			    popup.toFront();
-
-
 			}
 			
 			// Method to create artist object and 
@@ -170,7 +168,7 @@ public class Main extends JPanel{
 					formatted =  bieber.get_bio() + "\n" + bieber.get_stats() + bieber.get_records() + "\n" + bieber.get_image_link();
 					break;
 				case "Skrillex":
-					String[][] skrillex_records = {{ "Recess", "March 17, 2014", "11" }, };
+					String[][] skrillex_records = {{ "Recess", "March 17, 2014", "11" }};
 					Artist skrillex = new Artist("Sonny John Moore (born January 15, 1988), known professionally as Skrillex, is an American record producer, DJ, musician, singer and songwriter. Growing up in Northeast Los Angeles and in Northern California, he joined the American post-hardcore band From First to Last as the lead singer in 2004, and recorded two studio albums with the band (Dear Diary, My Teen Angst Has a Body Count, 2004, and Heroine, 2006) before leaving to pursue a solo career in 2007.", "Full Name: Sonny John Moore\nDate of Birth: January 15, 1988\nPlace of Birth: Los Angeles, California\nYears Active: 2004 - Present\n\nInstagram: @Skrillex\nTwitter: @Skrillex", skrillex_records, "https://s3.amazonaws.com/cmsc495.group1.artistprofilepics/Skrillex.png");
 					formatted =  skrillex.get_bio() + "\n" + skrillex.get_stats() + skrillex.get_records() + "\n" + skrillex.get_image_link();
 					break;
