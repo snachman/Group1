@@ -71,6 +71,7 @@ public class Template extends JFrame {
         Bio.setText("Keith Lionel Urban (born 26 October 1967) is a New Zealand-Australian singer, songwriter and record producer well known for his work in country music. "
                 + "In 1991, he released a self-titled debut album and charted four singles in Australia before moving to the United States the following year. ");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -83,6 +84,7 @@ public class Template extends JFrame {
                 + "\n\nInstagram: @KeithUrban"
                 + "\nTwitter: @KeithUrban");
         Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
         Desc.setBounds(20, 345, 234, 125);
         contentPane.add(Desc);
 
@@ -133,6 +135,7 @@ public class Template extends JFrame {
         Bio.setText("Christopher Comstock (born May 19, 1992), known professionally as Marshmello, is an American electronic music producer and DJ. "
                 + "He first gained international recognition by releasing remixes of songs by American DJ duo Jack Ü and Russian-German DJ Zedd.");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -145,6 +148,7 @@ public class Template extends JFrame {
                 + "\n\nInstagram: @MarshmelloMusic"
                 + "\nTwitter: @MarshmelloMusic");
         Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
         Desc.setBounds(20, 345, 234, 125);
         contentPane.add(Desc);
 
@@ -201,6 +205,7 @@ public class Template extends JFrame {
                 + "The lead-off single from his self-titled debut album, \"Austin\" spent five weeks at number one on the Billboard Hot Country Songs chart. "
                 + "The now Platinum-certified debut album also produced two more top 20 entries (\"All Over Me\" and \"Ol' Red\").");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -213,6 +218,7 @@ public class Template extends JFrame {
                 + "\n\nInstagram: @BlakeShelton"
                 + "\nTwitter: @BlakeShelton");
         Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
         Desc.setBounds(20, 345, 234, 125);
         contentPane.add(Desc);
 
@@ -265,6 +271,7 @@ public class Template extends JFrame {
                 + "She rose to fame as the winner of the fourth season of American Idol in 2005. "
                 + "Her debut single, \"Inside Your Heaven\", made her the only country artist to debut at number one on the Billboard Hot 100 chart and the only solo country artist in the 2000s to have a number-one song on the Hot 100. ");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -277,6 +284,7 @@ public class Template extends JFrame {
                 + "\n\nInstagram: @carrieunderwood"
                 + "\nTwitter: @carrieunderwood");
         Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
         Desc.setBounds(20, 345, 234, 125);
         contentPane.add(Desc);
 
@@ -321,6 +329,7 @@ public class Template extends JFrame {
                 + "He is the co-creator and lead member of the electronic dancehall music project Major Lazer, a member of the supergroup LSD with Sia and Labrinth, "
                 + "a member of electronic duo Jack Ü with producer and DJ Skrillex, and a member of Silk City with Mark Ronson.");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -333,6 +342,7 @@ public class Template extends JFrame {
                 + "\n\nInstagram: @Diplo"
                 + "\nTwitter: @Diplo");
         Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
         Desc.setBounds(20, 345, 234, 125);
         contentPane.add(Desc);
 
@@ -375,6 +385,7 @@ public class Template extends JFrame {
                 + "Discovered at 13 years old by talent manager Scooter Braun after he had watched his YouTube cover song videos, Bieber was signed to RBMG Records in 2008. "
                 + "With Bieber's debut EP My World, released in late 2009, Bieber became the first artist to have seven songs from a debut record chart on the Billboard Hot 100.");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -388,6 +399,7 @@ public class Template extends JFrame {
                 + "\nTwitter: @JustinBieber");
         Desc.setBackground(SystemColor.window);
         Desc.setBounds(20, 345, 234, 125);
+        Desc.setEditable(false);
         contentPane.add(Desc);
 
         JLabel Artist_name = new JLabel("Justin Bieber");
@@ -431,6 +443,7 @@ public class Template extends JFrame {
                 + "Pérez began his career in the early 2000s, recording reggaeton, latin hip hop and crunk music under a multitude of labels. "
                 + "In 2004, he released his debut album M.I.A.M.I. under TVT Records and the executive production of Lil Jon ");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -443,6 +456,7 @@ public class Template extends JFrame {
                 + "\n\nInstagram: @Pitbull"
                 + "\nTwitter: @Pitbull");
         Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
         Desc.setBounds(20, 345, 234, 125);
         contentPane.add(Desc);
 
@@ -496,6 +510,7 @@ public class Template extends JFrame {
         JTextPane Bio = new JTextPane();
         Bio.setText("Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. She is known for narrative songs about her personal life, which have received widespread media coverage. At age 14, Swift became the youngest artist signed by the Sony/ATV Music publishing house and, at age 15, she signed her first record deal. ");
         Bio.setBackground(UIManager.getColor("Button.background"));
+        Bio.setEditable(false);
         Bio.setBounds(266, 138, 431, 110);
         contentPane.add(Bio);
 
@@ -503,6 +518,7 @@ public class Template extends JFrame {
         Desc.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
         Desc.setText("Full Name: Taylor Alison Swift\nDate of Birth: December 13, 1989\nPlace of Birth: West Reading, Pennsylvania\nYears Active: 2006 - Present\n\nInstagram: @TaylorSwift\nTwitter: @TaylorSwift13");
         Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
         Desc.setBounds(20, 345, 234, 125);
         contentPane.add(Desc);
 
@@ -557,7 +573,8 @@ public class Template extends JFrame {
 				+ "Growing up in Northeast Los Angeles and in Northern California, he joined the American post-hardcore band From First to Last as the lead singer in 2004, and recorded two studio albums with the band (Dear Diary, "
 				+ "My Teen Angst Has a Body Count, 2004, and Heroine, 2006) before leaving to pursue a solo career in 2007.");
 		Bio.setBackground(UIManager.getColor("Button.background"));
-		Bio.setBounds(266, 138, 431, 110);
+        Bio.setEditable(false);
+        Bio.setBounds(266, 138, 431, 110);
 		contentPane.add(Bio);
 		
 		JTextPane Desc = new JTextPane();
@@ -568,7 +585,8 @@ public class Template extends JFrame {
 				+ "\nYears Active: 2004 - Present"
 				+ "\n\nInstagram: @Skrillex"
 				+ "\nTwitter: @Skrillex");
-		Desc.setBackground(SystemColor.window);
+        Desc.setBackground(SystemColor.window);
+        Desc.setEditable(false);
 		Desc.setBounds(20, 345, 234, 125);
 		contentPane.add(Desc);
 		
