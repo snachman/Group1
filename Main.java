@@ -6,10 +6,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 public class Main extends JFrame {
-
-    //To enforce Encapsulation, I made all this Private, but since they do not change
-    //It gives a warnning to make it final, and then make the names all CAPS
-    //I don't like all caps so, I'm leave it at just private
     
     private static  JPanel ui = new JPanel();
     private static JRadioButton popButton = new JRadioButton("Pop");
@@ -22,8 +18,6 @@ public class Main extends JFrame {
     private static String[] popArtists = {"Taylor Swift", "Pitbull", "Justin Bieber"};
     private static String[] edmArtists = {"Skrillex", "Diplo", "Marshmello"};
     private static String[] countryArtists = {"Keith Urban", "Blake Shelton", "Carrie Underwood"};
-    
-
     public static void main(String[] args) throws SQLException {
 
         JFrame frame = new JFrame();
@@ -57,7 +51,7 @@ public class Main extends JFrame {
         buttonGroup.add(countryButton);
         countryButton.setBounds(338, 122, 82, 23);
 
-        artistsComboBox.setBounds(207, 236, 143, 27);
+        artistsComboBox.setBounds(207, 236, 163, 27);
         artistsComboBox.setEnabled(true);
         artistsComboBox.setVisible(true);
 

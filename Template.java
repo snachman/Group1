@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import com.sun.glass.events.WindowEvent;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
@@ -11,7 +10,6 @@ public class Template extends JFrame {
 
     private final JLayeredPane contentPane;
     private JTable table;
-    // private static JFrame frame = new JFrame();
     static Template obj = new Template();
 
     /**
@@ -604,10 +602,5 @@ public class Template extends JFrame {
 		Photo.setIcon(new ImageIcon(img));
 		Photo.setBounds(20, 123, 193, 210);
 		contentPane.add(Photo);
-    }
-
-    protected void JFrame(WindowEvent windowEvent) {
-        // TODO Auto-generated method stub
-
     }
 }
