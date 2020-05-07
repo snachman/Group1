@@ -44,7 +44,7 @@ public class Main extends JFrame {
 
         JLabel header2 = new JLabel("Select a musical artist");
         header2.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-        header2.setBounds(182, 179, 214, 27);
+        header2.setBounds(182, 179, 214, 30);
 
         ButtonGroup buttonGroup = new ButtonGroup();
 
@@ -70,6 +70,7 @@ public class Main extends JFrame {
         frame.getContentPane().setLayout(null);
         frame.getContentPane().add(title);
         frame.getContentPane().add(header);
+        frame.getContentPane().add(header2);
         frame.getContentPane().add(popButton);
         frame.getContentPane().add(edmButton);
         frame.getContentPane().add(countryButton);
