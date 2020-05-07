@@ -1,4 +1,3 @@
-package full.projects;
 
 import java.awt.Component;
 import java.awt.Font;

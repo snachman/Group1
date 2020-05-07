@@ -1,4 +1,3 @@
-package full.projects;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
