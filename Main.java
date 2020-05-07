@@ -28,6 +28,7 @@ public class Main extends JFrame {
 
         JFrame frame = new JFrame();
         frame.setSize(600, 500);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         genre_box_shower();
 
