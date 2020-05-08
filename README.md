@@ -1,6 +1,6 @@
 # Group1
 
-This project is for the final submission of Group 1's CMSC 495 at the University of Maryland Global campus.
+This project is for the final submission of Group 1's CMSC 495 at the University of Maryland Global Campus.
 
 Professor Dr. Hung Dao
 
@@ -20,4 +20,5 @@ Contributors:
 ![](/images/step8.png)
 ![](/images/step9.png)
 ![](/images/step10.png)
+![](/images/step11.png)
 ![](/images/step12.png)
