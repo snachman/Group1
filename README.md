@@ -1,24 +1,36 @@
 # Group1
-
 This project is for the final submission of Group 1's CMSC 495 at the University of Maryland Global Campus.
 
-Professor Dr. Hung Dao
+The purpose of the "Artist Search" application is to allow a user to lookup career and personal information on a music artist. 
 
-Contributors:
-* Alex Scharnhorst
-* Sam Nachman
-* Keimmie Booth
-* Olujimi Adetula
+To run the program download the Group1.jar file from the repositoriy. Once the file has been download to your computer open the Group1.jar file by double clicking. 
 
-![](/images/step1.png)
-![](/images/step2.png)
-![](/images/step3.png)
-![](/images/step4.png)
-![](/images/step5.png)
-![](/images/step6.png)
-![](/images/step7.png)
-![](/images/step8.png)
-![](/images/step9.png)
-![](/images/step10.png)
-![](/images/step11.png)
-![](/images/step12.png)
+On the inital opening of the  'Group1.jar" file you will see the following page.
+
+![](/images/Home.png)
+
+Step 1.  Select the radio button of the music genre you would like to search.
+
+![](/images/HomeGenre.png)
+
+Step 2.  Select the combobox to choose the name of the musical artist you would like to search.
+
+![](/images/HomeArtist.png)
+
+Step 3.  Select the “Search” button after choosing a genre and artist.
+
+![](/images/Search.png)
+
+Step 4.  The music artist profile page will load with the artist information. Once you are ready to perform another search select “Home” to do another search.
+
+![](/images/Profile.png)
+
+
+
+
+
+
+
+
+
+
