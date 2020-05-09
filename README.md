@@ -6,8 +6,11 @@ The purpose of the "Artist Search" application is to allow a user to lookup care
 # Installation
 To run the program download the Group1.jar file from the repositoriy. Once the file has been download to your computer open the Group1.jar file by double clicking. 
 
+**Note** 
+    Depending on your computers security settings you may not be able to run the Group1.jar file by double clicking. If this is the case on your system. Run the file from the command prompt using the following command; java -jar Group1.jar 
+
 # Operation
-On the inital opening of the  'Group1.jar" file you will see the following page.
+On the inital opening of the 'Group1.jar" file you will see the following page.
 
 ![](/images/Home.png)
 
