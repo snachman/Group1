@@ -1,10 +1,12 @@
-# Group1
+# Summary
 This project is for the final submission of Group 1's CMSC 495 at the University of Maryland Global Campus.
 
 The purpose of the "Artist Search" application is to allow a user to lookup career and personal information on a music artist. 
 
+# Installation
 To run the program download the Group1.jar file from the repositoriy. Once the file has been download to your computer open the Group1.jar file by double clicking. 
 
+# Operation
 On the inital opening of the  'Group1.jar" file you will see the following page.
 
 ![](/images/Home.png)
